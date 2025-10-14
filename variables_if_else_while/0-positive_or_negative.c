@@ -13,12 +13,6 @@ int n;
 
 n = 98;
 
-int n;
-n = -98;
-
-int n;
-n = 0;
-
 if (n > 0)
 printf("%d is positive\n", n);
 else if (n == 0)
