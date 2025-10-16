@@ -1,9 +1,5 @@
-#ifndef MYHEADER_H
-#define MYHEADER_H
+#ifndef MAIN_H
+#define MAIN_H
 
-void sayHello();
-int add(int a, int b);
-double area(double radius);
-int length(char *x);
-
+int _putchar int(char c);
 #endif
