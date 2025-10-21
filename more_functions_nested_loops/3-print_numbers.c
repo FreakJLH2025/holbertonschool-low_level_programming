@@ -7,12 +7,9 @@
 */
 void print_numbers(void)
 {
-char nums[] = "0123456789\n";
-int i = 0;
+int i;
 
-while (nums[i] != '\0')
-{
-_putchar(nums[i]);
-i++;
-}
+for (i = '0'; i <= '9'; i++)
+_putchar(i);
+_putchar('\n');
 }
