@@ -13,7 +13,6 @@ void reset_to_98(int *n)
 *n = 98;
 }
 
-int main() 
 {
 int value = 10;
 printf("n=%d\n", value);
