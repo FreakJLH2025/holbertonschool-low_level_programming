@@ -2,21 +2,10 @@
 #include <stdio.h>
 
 /**
-*
-*main - muestra el valor antes y despues de llamar a reset_to_98
-*
-*Return always to 0 
-*
+* reset_to_98 - updates the value pointed to by n to 98
+* @n: pointer to an int
 */
 void reset_to_98(int *n)
 {
 *n = 98;
-}
-int main (void)
-{
-int value = 10;
-printf("n=%d\n", value);
-reset_to_98(&value);
-printf("n=%d\n", value);
-return (0);
 }
