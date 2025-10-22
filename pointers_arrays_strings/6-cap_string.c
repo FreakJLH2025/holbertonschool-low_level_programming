@@ -9,25 +9,23 @@
 */
 char *cap_string(char *str)
 {
-int i = 0;
-int capitalize_next = 1;
+int i = 0, j;
 char separators[] = " \t\n,;.!?\"(){}";
-int j;
 
 while (str[i] != '\0')
 {
-if (capitalize_next && str[i] >= 'a' && str[i] <= 'z')
+/* Capitalize first character if it's a lowercase letter */
+if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
 {
-str[i] -= ('a' - 'A');
-capitalize_next = 0;
+str[i] -= 32;
 }
 
-/* Check if current character is a separator */
+/* Check if previous character is a separator */
 for (j = 0; separators[j] != '\0'; j++)
 {
-if (str[i] == separators[j])
+if (str[i] == separators[j] && str[i + 1] >= 'a' && str[i + 1] <= 'z')
 {
-capitalize_next = 1;
+str[i + 1] -= 32;
 break;
 }
 }
