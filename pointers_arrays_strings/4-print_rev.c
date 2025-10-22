@@ -14,7 +14,7 @@ while (s[i] != '\0')
 i++;
 }
 
-// Print characters in reverse
+/*Print characters in reverse*/
 while (i > 0)
 {
 i--;
