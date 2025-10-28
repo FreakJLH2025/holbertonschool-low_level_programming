@@ -4,9 +4,11 @@
 /**
 * _strlen_recursion - Returns the length of a string
 * @s: Pointer to the string
-*
+* 
 * This function recursively counts characters until it reaches
 * the null terminator '\0', returning the total length.
+*
+* Return: The length of the string
 */
 int _strlen_recursion(char *s)
 {
