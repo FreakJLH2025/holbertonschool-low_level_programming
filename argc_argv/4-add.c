@@ -20,7 +20,7 @@ while (s[i])
 if (!isdigit(s[i]))
 return (0);
 i++;
-    }
+}
 return (1);
 }
 
