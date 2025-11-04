@@ -2,13 +2,12 @@
 #include <stdlib.h>
 
 /**
-* string_nconcat - Concatenates two strings, using at most n bytes from s2
+* string_nconcat - Concatenates s1 and first n bytes of s2
 * @s1: First string
 * @s2: Second string
-* @n: Maximum number of bytes to copy from s2
+* @n: Number of bytes from s2
 *
-* Return: Pointer to newly allocated string containing s1 + first n bytes of s2,
-* or NULL if allocation fails
+* Return: Pointer to new string, or NULL
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
