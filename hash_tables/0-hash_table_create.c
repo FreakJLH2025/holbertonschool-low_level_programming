@@ -1,33 +1,29 @@
-#ifndef HASH_TABLES_H
-#define HASH_TABLES_H
+#include "hash_tables.h"
 
 /**
-* struct hash_node_s - Node of a hash table
-* @key: The key, string (unique in the HashTable)
-* @value: The value corresponding to a key
-* @next: A pointer to the next node of the list
+* hash_table_create - creates a hash table
+* @size: size of the array
+*
+* Return: pointer to the new hash table, or NULL on failure
 */
-typedef struct hash_node_s
+hash_table_t *hash_table_create(unsigned long int size)
 {
-char *key;
-char *value;
-struct hash_node_s *next;
-} hash_node_t;
+hash_table_t *ht;
 
-/**
-* struct hash_table_s - Hash table data structure
-* @size: The size of the array
-* @array: An array of size @size
-* Each cell of this array is a pointer to the first node of a linked list,
-* because we want our HashTable to use chaining for collision handling
-*/
-typedef struct hash_table_s
+if (size == 0)
+return (NULL);
+
+ht = malloc(sizeof(hash_table_t));
+if (ht == NULL)
+return (NULL);
+
+ht->size = size;
+ht->array = calloc(size, sizeof(hash_node_t *));
+if (ht->array == NULL)
 {
-unsigned long int size;
-hash_node_t **array;
-} hash_table_t;
+free(ht);
+return (NULL);
+}
 
-
-hash_table_t *hash_table_create(unsigned long int size);
-
-#endif
+return (ht);
+}
