@@ -18,7 +18,7 @@ return;
 
 printf("{");
 for (i = 0; i < ht->size; i++)
-}
+{
 node = ht->array[i];
 while (node)
 {
@@ -28,6 +28,7 @@ printf("'%s': '%s'", node->key, node->value);
 first = 0;
 node = node->next;
 }
+
 }
 printf("}\n");
 }
