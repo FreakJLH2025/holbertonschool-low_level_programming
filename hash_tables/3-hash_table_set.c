@@ -1,12 +1,17 @@
 #include "hash_tables.h"
+#include <string.h>
+#include <stdlib.h>
 
 /**
-x* hash_table_set - adds an element to the hash table
+* hash_table_set - adds an element to the hash table
 * @ht: pointer to the hash table
-* @key: key string (non-empty)
-* @value: value string (duplicated)
+* @key: key string (must not be empty)
+* @value: value string (duplicated, can be empty)
 *
 * Return: 1 on success, 0 on failure
+*
+* Description: If the key already exists, update its value.
+* In case of collision, add the new node at the beginning of the list.
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
@@ -47,6 +52,7 @@ free(node->value);
 free(node);
 return (0);
 }
+
 node->next = ht->array[idx];
 ht->array[idx] = node;
 
